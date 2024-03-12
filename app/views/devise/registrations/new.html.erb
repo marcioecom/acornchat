@@ -56,7 +56,10 @@
           </div>
 
           <div class="mt-6">
-            <%= f.submit "Sign up", class: "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out cursor-pointer" %>
+            <%= f.submit "Sign up",
+                         "data-disable-with" => "Registering...",
+                         class: "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out cursor-pointer"
+            %>
           </div>
 
           <div class="py-8">
