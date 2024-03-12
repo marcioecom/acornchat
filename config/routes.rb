@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     get 'reset_password', to: 'users/passwords#edit'
   end
 
-  root "welcome#index"
+  root 'welcome#index'
+
+  get 'dashboard', to: 'dashboard#index'
+
+  get 'about', to: 'welcome#about'
 end

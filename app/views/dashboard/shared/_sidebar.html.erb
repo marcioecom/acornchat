@@ -1,0 +1,174 @@
+<div class="h-screen flex overflow-hidden bg-gray-100">
+  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+  <div class="md:hidden hidden" id="mdMenu">
+    <div class="fixed inset-0 flex z-40">
+      <!--
+        Off-canvas menu overlay, show/hide based on off-canvas menu state.
+
+        Entering: "transition-opacity ease-linear duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "transition-opacity ease-linear duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+      <div class="fixed inset-0">
+        <div class="absolute inset-0 bg-gray-600 opacity-75" id="overlay"></div>
+      </div>
+      <!--
+        Off-canvas menu, show/hide based on off-canvas menu state.
+
+        Entering: "transition ease-in-out duration-300 transform"
+          From: "-translate-x-full"
+          To: "translate-x-0"
+        Leaving: "transition ease-in-out duration-300 transform"
+          From: "translate-x-0"
+          To: "-translate-x-full"
+      -->
+      <div class="relative flex-1 flex flex-col max-w-xs w-full bg-white">
+        <div class="absolute top-0 right-0 -mr-14 p-1">
+          <button class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600" aria-label="Close sidebar" onclick="document.getElementById('mdMenu').classList.add('hidden');">
+            <svg class="h-6 w-6 text-gray-600" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+          <div class="flex-shrink-0 flex items-center px-4 text-blue-500">
+            <a href="/" alt="home" class="flex items-center">
+              <img class="h-8 w-auto rounded mr-2" src="/small_logo.png" alt="acornchat.com logo">
+              acornchat.com
+            </a>
+          </div>
+
+          <nav class="mt-5 px-2 space-y-1">
+
+
+            <a href="/" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-900 bg-gray-100 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150">
+              <!-- Heroicon name: home -->
+              <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Home
+            </a>
+
+          </nav>
+        </div>
+        <div class="flex-shrink-0 flex border-t border-gray-200 p-4 flex-col">
+
+          <div class="flex-shrink-0 group block">
+            <div class="flex items-center">
+
+              <div class="text-sm font-medium text-blue-500 hover:text-blue-700 flex flex-col justify-center items-center">
+                <img class="inline-block h-8 w-8 rounded-full" src="/images/member.png" alt="">
+              </div>
+
+
+              <a href="/profile" class="ml-3">
+                <p class="text-sm leading-5 font-medium text-gray-500 group-hover:text-gray-700 transition ease-in-out duration-150">
+                  View profile
+                </p>
+              </a>
+            </div>
+          </div>
+
+
+
+          <a href="/users/sign_out" class="group flex items-center px-2 py-2 mt-4 text-base leading-6 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-100 transition ease-in-out duration-150">
+            <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Sign out
+          </a>
+
+        </div>
+      </div>
+      <div class="flex-shrink-0 w-14">
+        <!-- Force sidebar to shrink to fit close icon -->
+      </div>
+    </div>
+  </div>
+  <!-- Static sidebar for desktop -->
+  <div class="hidden md:flex md:flex-shrink-0">
+    <div class="flex flex-col w-64">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-white">
+        <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <a href="/" class="flex items-center flex-shrink-0 px-4 text-blue-500">
+            <img class="h-8 w-auto mr-2 rounded" src="/small_logo.png" alt="acornchat.com logo">
+            acornchat.com
+          </a>
+
+          <nav class="mt-5 flex-1 px-2 space-y-1 bg-white">
+            <a href="/" class="group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md text-gray-900 bg-gray-100 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150">
+              <!-- Heroicon name: home -->
+              <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Home
+            </a>
+          </nav>
+        </div>
+        <div class="flex flex-col flex-shrink-0 border-t border-gray-200 p-4">
+          <div class="flex-shrink-0 group block">
+            <div class="flex items-center">
+              <div class="text-sm font-medium text-blue-500 hover:text-blue-700 flex flex-col justify-center items-center">
+                <img class="inline-block h-8 w-8 rounded-full" src="/images/member.png" alt="">
+              </div>
+
+              <a href="/profile" class="ml-3">
+                <p class="text-sm leading-5 font-medium text-gray-500 group-hover:text-gray-700 transition ease-in-out duration-150">
+                  View profile
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <a href="/users/sign_out" class="group flex items-center px-2 py-2 mt-4 text-base leading-6 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-100 transition ease-in-out duration-150">
+            <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Sign out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-0 flex-1 overflow-hidden">
+    <div class="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
+      <button class="-ml-0.5 -mt-0.5 h-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150" aria-label="Open sidebar" onclick="document.getElementById('mdMenu').classList.remove('hidden');">
+        <!-- Heroicon name: menu hamburger -->
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <span class="ml-2"></span>
+      </button>
+    </div>
+    <main id="main" class="flex-1 relative z-0 overflow-y-auto focus:outline-none" tabindex="0">
+      <div class="p-4 border-b border-gray-300 bg-white flex justify-between items-center">
+        <div class="flex">
+          <h1 class="text-lg leading-6 font-medium text-gray-900">Home</h1>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap justify-start">
+        <div class="pt-2 pb-6 md:py-6 w-full flex-grow" style="max-width: 700px;">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:mr-0 lg:pr-0">
+            <%= yield %>
+          </div>
+        </div>
+<!--        <div class="m-8 mt-0 lg:mt-8 lg:mr-0 lg:pr-8 pt-2 flex-grow max-w-7xl xl:max-w-xs" style="max-width: 700px;">-->
+
+<!--        </div>-->
+      </div>
+    </main>
+  </div>
+</div>
+
+<script type="text/javascript">
+    const overlay = document.getElementById('overlay');
+    const mdMenu = document.getElementById('mdMenu');
+
+    overlay.addEventListener('click', (_event) => mdMenu.classList.add('hidden'));
+</script>
