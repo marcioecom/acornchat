@@ -1,0 +1,54 @@
+<%= render "welcome/shared/layout" do %>
+  <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+      <div>
+        <a href="/">
+          <img class="mx-auto h-12 w-auto rounded-lg" src="/small_logo.png" alt="logo">
+        </a>
+        <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          Sign in
+        </h2>
+
+      </div>
+
+      <section class="mt-8">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="rounded-md shadow-sm">
+            <div>
+              <%= f.email_field :email,
+                  autofocus: true,
+                  autocomplete: "email",
+                  placeholder: "Email address",
+                  class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+              %>
+            </div>
+
+            <div class="field">
+              <%= f.password_field :password,
+                  autocomplete: "current-password",
+                  placeholder: "Password",
+                  class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+              %>
+            </div>
+          </div>
+
+          <div class="pb-2 pt-1 flex flex-grow justify-end">
+            <div class="text-sm text-right leading-5">
+              <%= link_to "Forgot your password?", forgot_password_path, class: "font-medium flex justify-center text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150" %>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <%= f.submit "Sign up", class: "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring-blue active:bg-blue-700 transition duration-150 ease-in-out cursor-pointer" %>
+          </div>
+
+          <div class="py-8">
+            <div class="text-sm leading-5">
+              <%= link_to "Not a user yet? Sign up", sign_up_path, class: "font-medium flex justify-center text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150" %>
+            </div>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+<% end %>

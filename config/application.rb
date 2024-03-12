@@ -18,5 +18,13 @@ module Acornchat
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.to_prepare do
+      Devise::SessionsController.layout "application"
+      Devise::RegistrationsController.layout "application"
+      Devise::ConfirmationsController.layout "application"
+      Devise::UnlocksController.layout "application"
+      Devise::PasswordsController.layout "application"
+    end
   end
 end
